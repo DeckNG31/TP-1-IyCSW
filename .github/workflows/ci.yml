@@ -38,7 +38,10 @@ jobs:
       - name: Checkout del codigo
         uses: actions/checkout@v4
 
+      
+
       - name: Configurar JDK 17
+        if: hashFiles('pom.xml') != ''
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
