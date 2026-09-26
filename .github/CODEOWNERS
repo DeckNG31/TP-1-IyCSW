@@ -1,9 +1,6 @@
-# Responsable de revisar todos los archivos del repositorio.
-* @DeckNG31
-* @MatMa4
-* @SSANTTI17
-* @NicxPrrn
+# Responsables generales de revisión.
+* @DeckNG31 @MatMa4 @SSANTTI17 @NicxPrrn
 
-# Rutas específicas
+# Estas reglas reemplazan la asignación general para cada ruta.
 /backend/ @DeckNG31 @MatMa4
 /frontend/ @NicxPrrn @SSANTTI17
