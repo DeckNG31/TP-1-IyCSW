@@ -1,0 +1,65 @@
+name: CI Pipeline - TP-1-IyCSW
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  validate-codeowners:
+    name: Validar CODEOWNERS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Comprobar existencia de CODEOWNERS
+        run: |
+          if [ -f ".github/CODEOWNERS" ] || [ -f "CODEOWNERS" ] || [ -f "docs/CODEOWNERS" ]; then
+            echo "CODEOWNERS verificado correctamente."
+          else
+            echo "ERROR: No se encontro el archivo CODEOWNERS."
+            exit 1
+          fi
+
+  build-and-test:
+    name: Compilar y Testear (Spring Boot)
+    runs-on: ubuntu-latest
+    needs: validate-codeowners
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      
+
+      - name: Configurar JDK 17
+        if: hashFiles('pom.xml') != ''
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Dar permisos de ejecucion a Maven Wrapper
+        if: hashFiles('mvnw') != ''
+        run: chmod +x mvnw
+
+      - name: Compilar y correr pruebas con Maven
+        run: |
+          if [ -f "pom.xml" ]; then
+            if [ -f "./mvnw" ]; then
+              ./mvnw clean test package
+            else
+              mvn clean test package
+            fi
+          else
+            echo "Aviso: No se encontro pom.xml todavia. Omitiendo compilacion y tests."
+          fi
