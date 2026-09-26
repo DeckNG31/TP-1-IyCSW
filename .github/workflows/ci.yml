@@ -50,10 +50,13 @@ jobs:
         run: chmod +x mvnw
 
       - name: Compilar y correr pruebas con Maven
-        if: hashFiles('pom.xml') != ''
         run: |
-          if [ -f "./mvnw" ]; then
-            ./mvnw clean test package
+          if [ -f "pom.xml" ]; then
+            if [ -f "./mvnw" ]; then
+              ./mvnw clean test package
+            else
+              mvn clean test package
+            fi
           else
-            mvn clean test package
+            echo "Aviso: No se encontro pom.xml todavia. Omitiendo compilacion y tests."
           fi
