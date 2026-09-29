@@ -24,6 +24,11 @@ public class ControladorCalculadora {
     public double restar(@RequestBody Operacion operacion) {
         return servicioCalculos.restar(operacion.a(), operacion.b());
     }
+    
+    @PostMapping("/multiplicar")
+    public double multiplicar(@RequestBody Operacion operacion) {
+        return servicioCalculos.multiplicar(operacion.a(), operacion.b());
+    }
 
     public record Operacion(double a, double b) {}
     
