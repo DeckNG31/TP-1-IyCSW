@@ -23,5 +23,7 @@ gh pr create --base master --head release/1.0.0 --title "Release 1.0.0" --body "
 lo mismo par actualizar develop
 gh pr create --base develop --head release/1.0.0 --title "Merge release/1.0.0 en develop" --body "Integra a develop los cambios de la release 1.0.0."
 
+Para la V2.0.0 se crearon la rama multiplicacion y division y luego se les hizo pr, por ultimo se genero la rama de release de V2.0.0 y se solicito nuevamente el PR a master y a develop, luego de ser aprobados se mergearon, todo esto hecho en la interfaz web de github.
+
 ## Notas importanes
 Hubo un error en el commit a6efb9a en el nombre dice que es el hotfix 1.0.1, cuadno deberia decir 0.1.1, solucionarlo suponia vovler a ese commit y hacer la modificacion del titulo pero dado que estabamos probando y es un error que todo el equipo vio tarde, se lo deja como esta y se lo aclara aca.
