@@ -14,17 +14,16 @@ public class ControladorCalculadora {
     public ControladorCalculadora(ServicioCalculos servicioCalculos) {
         this.servicioCalculos = servicioCalculos;
     }
+    
+    @PostMapping("/sumar")
+    public double sumar(@RequestBody Operacion operacion) {
+        return servicioCalculos.sumar(operacion.a(), operacion.b());
+    }
 
     @PostMapping("/restar")
     public double restar(@RequestBody Operacion operacion) {
         return servicioCalculos.restar(operacion.a(), operacion.b());
     }
-
-
-    @PostMapping("/sumar")
-    public double sumar(@RequestBody Operacion operacion) {
-        return servicioCalculos.sumar(operacion.a(), operacion.b());
-  }    
 
     public record Operacion(double a, double b) {}
     

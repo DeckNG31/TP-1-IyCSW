@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.calculadora {
+  width: 100%;
+  max-width: 360px;
+  padding: 0 1rem;
+}
+
+.calculadora form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calculadora input,
+.calculadora select,
+.calculadora button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.resultado {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.error {
+  color: #c0392b;
+}
