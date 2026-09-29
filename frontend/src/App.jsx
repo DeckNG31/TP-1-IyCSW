@@ -5,6 +5,7 @@ import './App.css'
 const OPERACIONES = [
   { endpoint: 'sumar', etiqueta: 'Suma (+)' },
   { endpoint: 'restar', etiqueta: 'Resta (−)' },
+  { endpoint: 'multiplicar', etiqueta: 'Multiplicación (×)' },
 ]
 
 function App() {
