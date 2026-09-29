@@ -20,6 +20,12 @@ public class ControladorCalculadora {
         return servicioCalculos.restar(operacion.a(), operacion.b());
     }
 
+
+    @PostMapping("/sumar")
+    public double sumar(@RequestBody Operacion operacion) {
+        return servicioCalculos.sumar(operacion.a(), operacion.b());
+  }    
+
     public record Operacion(double a, double b) {}
     
 }
