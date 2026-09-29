@@ -18,6 +18,10 @@ Se hizo una rama release desde develop con todas las ramas anteriormente mencion
 en /backend: .\mvnw.cmd verify
 en /frontend: npm run lint y npm run build
 ambos dieron exito por lo que procedimos a hacer algunas pruebas manuales y funciona todo como se esperaba. Por lo que podemos hacer el pr de la release a master y luego a develop para continuar con la V2.
+Para hacer el PR de release a master por consola como solicita el enunciado, se utiliza el siguiente comando:
+gh pr create --base master --head release/1.0.0 --title "Release 1.0.0" --body "Lleva la versión 1.0.0 a producción: suma, resta y pantalla de la calculadora."
+lo mismo par actualizar develop
+gh pr create --base develop --head release/1.0.0 --title "Merge release/1.0.0 en develop" --body "Integra a develop los cambios de la release 1.0.0."
 
 ## Notas importanes
 Hubo un error en el commit a6efb9a en el nombre dice que es el hotfix 1.0.1, cuadno deberia decir 0.1.1, solucionarlo suponia vovler a ese commit y hacer la modificacion del titulo pero dado que estabamos probando y es un error que todo el equipo vio tarde, se lo deja como esta y se lo aclara aca.
