@@ -57,6 +57,11 @@ public class ControladorCalculadora {
         return Math.pow(operacion.a(), operacion.b());
     }
 
+    @PostMapping("/potencia2")
+    public double potencia2(@RequestBody Operacion operacion) {
+        return Math.pow(operacion.a(), 2);
+    }
+
     public record Operacion(double a, double b) {}
     
 }
