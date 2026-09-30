@@ -11,3 +11,4 @@
 ## v3.0.0
 * US-07 – Potencia – Mateo
 * US-08 – Raíz cuadrada – Nico
+* US-09 - Promedio - Mateo

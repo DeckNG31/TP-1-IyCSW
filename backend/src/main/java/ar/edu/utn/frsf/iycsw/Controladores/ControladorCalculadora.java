@@ -57,6 +57,11 @@ public class ControladorCalculadora {
         return Math.pow(operacion.a(), operacion.b());
     }
 
+    @PostMapping("/promedio")
+    public double promedio(@RequestBody Operacion operacion) {
+        return servicioCalculos.promedio(operacion.a(), operacion.b());
+    }
+    
     public record Operacion(double a, double b) {}
     
 }
