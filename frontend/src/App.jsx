@@ -9,6 +9,7 @@ const OPERACIONES = [
   { endpoint: 'dividir', etiqueta: 'División (/)' },
   { endpoint: 'raiz-cuadrada', etiqueta: 'Raíz cuadrada (√)' },
   { endpoint: 'potencia', etiqueta: 'Potencia (^)' },
+  { endpoint: 'promedio', etiqueta: 'Promedio' }
 ]
 
 function App() {

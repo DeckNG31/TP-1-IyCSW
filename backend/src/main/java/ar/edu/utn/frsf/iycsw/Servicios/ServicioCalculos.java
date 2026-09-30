@@ -31,6 +31,10 @@ public class ServicioCalculos {
     public double potencia(double a, double b) {
         return Math.pow(a, b);
     }
+
+    public double promedio(double a, double b) {
+        return (a + b) / 2;
+    }
 }
 
 
