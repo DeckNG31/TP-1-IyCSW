@@ -61,7 +61,7 @@ public class ControladorCalculadora {
     public double promedio(@RequestBody Operacion operacion) {
         return servicioCalculos.promedio(operacion.a(), operacion.b());
     }
-    
+
     public record Operacion(double a, double b) {}
     
 }

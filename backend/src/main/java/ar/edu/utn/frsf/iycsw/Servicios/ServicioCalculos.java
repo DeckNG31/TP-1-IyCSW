@@ -33,7 +33,7 @@ public class ServicioCalculos {
     }
 
     public double promedio(double a, double b) {
-        return (a + b) / 2;
+        return a/2 + b/2;
     }
 }
 
