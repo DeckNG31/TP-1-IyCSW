@@ -8,6 +8,7 @@ const OPERACIONES = [
   { endpoint: 'multiplicar', etiqueta: 'Multiplicación (*)' },
   { endpoint: 'dividir', etiqueta: 'División (/)' },
   { endpoint: 'raiz-cuadrada', etiqueta: 'Raíz cuadrada (√)' },
+  { endpoint: 'potencia', etiqueta: 'Potencia (^)' },
 ]
 
 function App() {

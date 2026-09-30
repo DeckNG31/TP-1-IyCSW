@@ -21,11 +21,15 @@ public class ServicioCalculos {
     return Math.sqrt(a);
     }
 
-  public double dividir(double a, double b) {
-    if (b == 0.0) { // También detecta -0.0
-        throw new IllegalArgumentException("No se puede dividir por cero");
+    public double dividir(double a, double b) {
+        if (b == 0.0) { // También detecta -0.0
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        }
+        return a / b;
     }
-    return a / b;
+
+    public double potencia(double a, double b) {
+        return Math.pow(a, b);
     }
 }
 
