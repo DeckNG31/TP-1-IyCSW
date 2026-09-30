@@ -34,6 +34,15 @@ public class ControladorCalculadora {
         return servicioCalculos.sumar(operacion.a(), operacion.b());
   }    
 
+    @PostMapping("/raiz-cuadrada")
+    public double raizCuadrada(@RequestBody Operacion operacion) {
+        try {
+            return servicioCalculos.raizCuadrada(operacion.a());
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
+        }
+    }
+
    @PostMapping("/dividir")
 public double dividir(@RequestBody Operacion operacion) {
     try {
